@@ -38,7 +38,7 @@ const TaskList = (props) => {
 
   // ? filter tasks based on type and date
   useEffect(() => {
-    if (props.highlight) {
+    if (props.highlight && state.tasks) {
       setTasks(
         state.tasks
           .filter((task) => task.type === props.type)
@@ -48,7 +48,7 @@ const TaskList = (props) => {
               dateToUnix(task.date) < props.date + 1000 * 60 * 60 * 24
           )
       );
-    } else {
+    } else if (state.tasks) {
       setTasks(
         state.tasks
           .filter((task) => task.type === props.type)
