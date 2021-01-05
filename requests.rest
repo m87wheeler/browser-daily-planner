@@ -1,0 +1,12 @@
+GET http://localhost:3000?from=1609113600000&to=1609718400000
+
+###
+
+POST http://localhost:3000/api/create
+content-type : application/json
+
+{
+    "task": "Eat Cake!",
+    "date": "2021-01-08T15:05:08.472+00:00",
+    "type": "important"
+}
